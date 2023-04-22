@@ -1,0 +1,51 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  label {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row; /* Set the direction to row */
+    align-items: center; /* Align items along the vertical center */
+  }
+  
+  label > span {
+    margin-right: 5px; /* Add some spacing between the label and input */
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 16px;
+    flex: 1; /* Take up all available space */
+  }
+  
+  button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .error-box{
+    border: 1px solid red;
+  }

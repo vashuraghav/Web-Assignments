@@ -1,0 +1,30 @@
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .left-panel {
+    width: 25%;
+    text-align: center;
+  }
+  
+  .vertical-line {
+    border-left: 1px solid #ddd;
+    height: 100vh;
+  }
+  
+  .right-panel {
+    width: 75%;
+    text-align: center;
+  }
+  
+  .product-list-container {
+    overflow-y: scroll;
+    height: 80vh;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
