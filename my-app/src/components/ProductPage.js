@@ -3,13 +3,14 @@ import axios from 'axios';
 import ProductForm from './ProductForm';
 import ProductList from './ProductList';
 import '../css/ProductPage.css'; // import the CSS file
+import {productUrl} from '../urls'
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5050/api/v1/product').then((response) => {
+    axios.get(productUrl).then((response) => {
       setProducts(response.data.data)
       setError(null);
     })

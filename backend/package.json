@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "run": "nodemon app.js"
+    "run": "nodemon app.js",
+    "stop": "kill $(lsof -t -i:5050)"
   },
   "author": "",
   "license": "ISC",

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/ProductForm.css'; // import the CSS file
+import {productUrl} from '../urls'
 
 const initialErrors = {
     name: '',
@@ -12,15 +13,17 @@ const initialErrors = {
     message: ''
   };
 
-function ProductForm({ onAddProduct }) {
-    const [data, setData] = useState({
+const intialResponse = {
       name: '',
       price: 0,
       quantity: 0,
       description: '',
       category: '',
       brand: '',
-    });
+}
+
+function ProductForm({ onAddProduct }) {
+    const [data, setData] = useState(intialResponse);
     const [errors, setErrors] = useState(initialErrors);
 
     const handleSubmit = (event) => {
@@ -30,17 +33,11 @@ function ProductForm({ onAddProduct }) {
         setErrors(formErrors);
       } else {
       axios
-        .post('http://localhost:5050/api/v1/product', data)
+        .post(productUrl, data)
         .then((response) => {
           onAddProduct(response.data.data);
-          setData({
-            name: '',
-            price: 0,
-            quantity: 0,
-            description: '',
-            category: '',
-            brand: '',
-          });
+          setData(intialResponse);
+          
           const notify = {} 
           notify.message = "Successfully Created"
           setErrors(notify);
